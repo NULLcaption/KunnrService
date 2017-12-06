@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.cxg.kunnr.kunnr.activity.activity.KunnrActivity"
+    tools:showIn="@layout/app_bar_kunnr">
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <!--交互正文-->
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:id="@+id/textViewInfo">
+
+            <TextView
+                android:id="@+id/kunnrName"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1.70"
+                android:inputType="text"
+                android:text="@string/kunnrName"
+                android:textColor="@android:color/black"
+                android:textSize="20sp">
+                <requestFocus />
+            </TextView>
+            <TextView
+                android:id="@+id/kunnrId"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1.70"
+                android:inputType="text"
+                android:textColor="@android:color/holo_blue_bright"
+                android:textSize="20sp"
+                android:visibility="gone">
+                <requestFocus />
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"
+            android:layout_height="5dp"
+            android:layout_below="@+id/textViewInfo" />
+
+        <ListView
+            android:id="@+id/lv_sysinfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tableRow2" />
+
+    </RelativeLayout>
+
+</LinearLayout>

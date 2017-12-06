@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/userName"
+        style="@style/LoginEditText"
+        android:layout_width="257dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/btn_login"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/edittext_normal"
+        android:ems="10"
+        android:hint="@string/login_username"
+        android:imeOptions="actionDone"
+        android:maxLength="20"
+        android:paddingLeft="5dp"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="257dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/login_btn_selector"
+        android:gravity="center"
+        android:text="@string/login_btn_commit"
+        android:textSize="16sp"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/password"
+        style="@style/LoginEditText"
+        android:layout_width="257dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_normal"
+        android:digits="0123456789"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:hint="@string/login_password"
+        android:imeOptions="actionDone"
+        android:maxLength="20"
+        android:paddingLeft="5dp"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/userName">
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="220dp"
+        android:layout_height="100dp"
+        android:contentDescription="@string/login_image_desc"
+        android:paddingTop="30dip"
+        android:src="@drawable/login_icon1"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:id="@+id/remberpsd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:button="@drawable/checkbox_selector"
+        android:text="@string/rememberpass"
+        android:textSize="16sp"
+        android:layout_below="@+id/password"
+        android:layout_alignStart="@+id/btn_login" />
+
+</RelativeLayout>
