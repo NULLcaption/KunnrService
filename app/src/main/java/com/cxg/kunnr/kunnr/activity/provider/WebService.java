@@ -45,11 +45,13 @@ public class WebService implements IDataProvider {
     private static WebService instance;
     private static final String TAG = "WebService";
     /** app服务地址(常用测试地址：本地，测试机，正式机)*/
-//	private static String OPENAPIURL = "http://exp.zjxpp.com:8186";//apn 生产机
- 	private static String OPENAPIURL = "http://exptest.zjxpp.com:7186";//测试机地址
+    private static String OPENAPIURL = "http://exp.zjxpp.com:8186";//apn 生产机
+// 	private static String OPENAPIURL = "http://exptest.zjxpp.com:7186";//测试机地址
 //    private static String OPENAPIURL = "http://10.3.3.47:7186";//apn 测试机
     /** 图片下载服务器地址 */
-    public static final String DOWNPHOTO = "http://exptest.zjxpp.com:7186/upload_file/crm/slave/photo/";
+//    public static final String DOWNPHOTO = "http://exptest.zjxpp.com:7186/upload_file/crm/slave/photo/";
+    public static final String DOWNPHOTO = "http://exp.zjxpp.com:8186/upload_file/crm/slave/photo/";
+
     /** app服务接口*/
     private static final String GET_PERFORMANCE_URL = "/mobilePlatform/router/login";
     private static final String LOGIN = "/login";

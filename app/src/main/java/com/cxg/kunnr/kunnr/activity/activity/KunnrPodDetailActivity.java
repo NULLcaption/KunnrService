@@ -720,7 +720,13 @@ public class KunnrPodDetailActivity extends AppCompatActivity implements OnClick
         }
 
         //根据运单编号获取POD明细信息
-        new getPodDetailInfoTask().execute(Tknum.getText().toString());
+        try {
+            new getPodDetailInfoTask().execute(Tknum.getText().toString());
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
         //加载时间控件
         selectDatePicker();
@@ -770,7 +776,12 @@ public class KunnrPodDetailActivity extends AppCompatActivity implements OnClick
             if (result.size() != 0) {
                 zsshipmentInTransitList = result;
                 //在EXP中创建获取到的在途运单明细数据
-                creatKunnrPodDetail(zsshipmentInTransitList);
+                try {
+                    creatKunnrPodDetail(zsshipmentInTransitList);
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -792,7 +803,12 @@ public class KunnrPodDetailActivity extends AppCompatActivity implements OnClick
                     kunnrPodDetail.setUnit(zss.getVrkme());
                     kunnrPodDetail.setCount(String.valueOf(list.size()));
 
-                    new creatKunnrPodDetailTask().execute(kunnrPodDetail);
+                    try {
+                        new creatKunnrPodDetailTask().execute(kunnrPodDetail);
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         } catch (Exception e) {
@@ -824,7 +840,12 @@ public class KunnrPodDetailActivity extends AppCompatActivity implements OnClick
             if (StringUtils.isNotEmpty(result)) {
                 if (result.equals("SUCCESS")) {
                     //添加数据成功以后显示数据列表
-                    initKunnrDetailData();
+                    try {
+                        initKunnrDetailData();
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(), "保存明细数据数据出错！" + result, Toast.LENGTH_SHORT).show();
                 }

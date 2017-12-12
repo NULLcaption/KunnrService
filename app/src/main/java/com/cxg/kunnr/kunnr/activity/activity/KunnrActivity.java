@@ -110,7 +110,12 @@ public class KunnrActivity extends AppCompatActivity
         if (role.equals(XPPApplication.jxscg_role) || role.equals(XPPApplication.jxs_role)) {
             kunnrId.setText(DataProviderFactory.getCouldId());
             //根据经销商编号获取POD信息
-            new getPodInfoTask().execute(kunnrId.getText().toString());
+            try {
+                new getPodInfoTask().execute(kunnrId.getText().toString());
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         } else {
             Toast.makeText(getApplicationContext(), "非经销商或经销商仓管，无法提报！", Toast.LENGTH_SHORT).show();
         }
@@ -151,7 +156,12 @@ public class KunnrActivity extends AppCompatActivity
                     kunnrPodTotal.setFlag("A");
                     kunnrPodTotal.setType("M");
 
-                    new creatKunnrPodTotalTask().execute(kunnrPodTotal);
+                    try {
+                        new creatKunnrPodTotalTask().execute(kunnrPodTotal);
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         } catch (Exception e) {
@@ -180,7 +190,12 @@ public class KunnrActivity extends AppCompatActivity
             if (StringUtils.isNotEmpty(result)) {
                 if (result.equals("SUCCESS")) {
                     //添加数据成功以后显示数据列表
-                    initKunnrAdapterData();
+                    try {
+                        initKunnrAdapterData();
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     Toast.makeText(getApplicationContext(), "保存明细数据数据出错！", Toast.LENGTH_SHORT).show();
                 }
@@ -218,6 +233,7 @@ public class KunnrActivity extends AppCompatActivity
                 String userName = zslipsList.get(0).getName1();
                 kunnrName.setText(userName + getString(R.string.home_hi));
                 //在EXP中创建获取到的在途运单数据
+
                 creatKunnrPodTotal(zslipsList);
             }
         }
