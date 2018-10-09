@@ -32,9 +32,9 @@ public class WebserviceUtils {
     //请求路径
     public static String SOAP_ACTION_001 = NAMESPACE_001 + "/" + METHOD_NAME_001;
     public static String SOAP_ACTION_003 = NAMESPACE_003 + "/" + METHOD_NAME_003;
-    //请求的webservice路径http://sapqas:  http://192.168.0.16:
-    public static final String URL_001 = "http://192.168.0.16:8000/sap/bc/srt/rfc/sap/zshipment_in_transit_v1/700/zshipment_in_transit_v1/binding?sap-client=700&sap-user=rfc&sap-password=poiuyt";
-    public static final String URL_003 = "http://192.168.0.16:8000/sap/bc/srt/rfc/sap/zproof_of_delivery_confirm/700/zproof_of_delivery_confirm/binding?sap-client=700&sap-user=rfc&sap-password=poiuyt";
+    //请求的webservice路径
+    public static final String URL_001 = "http://sap/bc/srt/rfc/sap/zshipment_in_transit_v1/700/zshipment_in_transit_v1/binding";
+    public static final String URL_003 = "http://sap/bc/srt/rfc/sap/zproof_of_delivery_confirm/700/zproof_of_delivery_confirm/binding";
 
     /**
      * Description: 根据运单在SAP做POD确认到货
